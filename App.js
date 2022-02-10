@@ -4,10 +4,13 @@ import Tabela from "./src/components/Tabela/Tabela";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { NavigationContainer } from "@react-navigation/native";
+import {Provider} from 'react-redux';
+import store from './src/store/store'
 
 export default function App() {
   const Stack = createMaterialBottomTabNavigator();
   return (
+    <Provider store={store}>
     <NavigationContainer>
       <Stack.Navigator
         initialRouteName="Home"
@@ -21,7 +24,11 @@ export default function App() {
           options={{
             tabBarLabel: "Home",
             tabBarIcon: () => (
-              <MaterialCommunityIcons name="home" color="grey" size={26} />
+              <MaterialCommunityIcons
+               name="home"
+               color="white"
+               size={26}
+              />
             ),
           }}
         />
@@ -29,9 +36,13 @@ export default function App() {
           name="Formulario"
           component={Formulario}
           options={{
-            tabBarLabel: "formulario",
+            tabBarLabel: "Formulário",
             tabBarIcon: () => (
-              <MaterialCommunityIcons name="calendar" color="blue" size={26} />
+              <MaterialCommunityIcons
+               name="calendar"
+               color="white"
+               size={26}
+              />
             ),
           }}
         />
@@ -39,11 +50,11 @@ export default function App() {
           name="Tabela"
           component={Tabela}
           options={{
-            tabBarLabel: "tabela",
+            tabBarLabel: "Tabela",
             tabBarIcon: () => (
               <MaterialCommunityIcons
                 name="shopping"
-                color="orange"
+                color="white"
                 size={26}
               />
             ),
@@ -51,5 +62,6 @@ export default function App() {
         />
       </Stack.Navigator>
     </NavigationContainer>
+    </Provider>
   );
 }

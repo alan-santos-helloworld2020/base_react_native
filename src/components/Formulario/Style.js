@@ -4,7 +4,7 @@ const style = StyleSheet.create({
      campo:{
         backgroundColor:'#fff',
         borderWidth:1,
-        padding:5,
+        padding:4,
         marginBottom:5,
     },
     btnSalvar:{
@@ -14,7 +14,7 @@ const style = StyleSheet.create({
         display:"flex",
         justifyContent:"center",
         alignItems:"center",
-        backgroundColor:"green"
+        backgroundColor:"grey"
 
     }
 })
